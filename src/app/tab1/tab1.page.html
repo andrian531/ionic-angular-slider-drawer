@@ -1,0 +1,32 @@
+<div class="overlay" [ngClass]="{hidden: showov==false}" (click)="hideov()"></div>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+</ion-content>
+<div class="item-container" *ngFor="let item of [0,0,0,0,0,0,0]">
+  <ion-item>
+    <ion-label>
+      Dummy item
+    </ion-label>
+  </ion-item>
+  <div class="icon-row">
+    <div class="icon-container">
+      <ion-icon name="trash"></ion-icon>
+    </div>
+  </div>
+</div>
+<app-slide-drawer (showoverlay)="showOverlay($event)" [status]='status'  >
+  <ion-list lines="none">
+    <ion-list-header>
+      <ion-label>Resources</ion-label>
+    </ion-list-header>
+    <ion-item *ngFor="let item of [0,0,0,0,0,0,0]">
+      <ion-icon slot="start" color="medium" name="book"></ion-icon>
+      <ion-label>Item</ion-label>
+    </ion-item>
+  </ion-list>
+</app-slide-drawer>
